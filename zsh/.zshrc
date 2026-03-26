@@ -1,4 +1,27 @@
-# --- Teclas de Atalho ---
+# ===============================================================
+# 1. POWERLEVEL10K INSTANT PROMPT
+# ===============================================================
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# ===============================================================
+# 2. OH MY ZSH CONFIGURATION
+# ===============================================================
+export ZSH="$HOME/.oh-my-zsh"
+
+# Tema (Usando o que está no repositório do OMZ)
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Plugins do Oh My Zsh (Adicione mais aqui se quiser)
+plugins=(git)
+
+# Inicializa o Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# ===============================================================
+# 3. TECLAS DE ATALHO (BINDKEYS)
+# ===============================================================
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
@@ -7,15 +30,16 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-# --- Tema e Plugins (Interface) ---
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# ===============================================================
+# 4. FERRAMENTAS E GERENCIADORES (MISE, FZF, ETC)
+# ===============================================================
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || source <(fzf --zsh)
 
-# --- Gerenciadores e Ferramentas ---
-source <(fzf --zsh)
+# MISE
 eval "$(~/.local/bin/mise activate zsh)"
 
-# Atualiza o sistema e todas as runtimes do mise
+# Função de atualização
 mi-update-all() {
   sudo pacman -Syu mise
   mise upgrade
@@ -23,19 +47,15 @@ mi-update-all() {
   echo "🚀 Sistema e ferramentas atualizados!"
 }
 
-# --- Autocompletar e Syntax (Sempre depois do mise/fzf) ---
-fpath+=/usr/share/zsh/site-functions
-autoload -Uz compinit
-compinit
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# --- Variáveis de Ambiente ---
+# ===============================================================
+# 5. VARIÁVEIS DE AMBIENTE E LOCALIZAÇÃO
+# ===============================================================
 export LANG=pt_BR.UTF-8
 export LC_ALL=pt_BR.UTF-8
 
-# --- Aliases ---
+# ===============================================================
+# 6. ALIASES
+# ===============================================================
 alias ls="eza --icons"
 alias ll="ls -la"
 alias la="ls -a"
@@ -47,7 +67,7 @@ alias compile="cc -Wall -Wextra -Werror"
 alias ..="cd .."
 alias ...="cd ../.."
 
-# --- Mise Shortcuts ---
+# Mise Shortcuts
 alias mi="mise"
 alias mi-i="mise install"
 alias mi-u="mise upgrade"
@@ -55,3 +75,13 @@ alias mi-s="mise doctor"
 alias mi-l="mise ls"
 alias mi-clean="mise prune --dry-run"
 alias mi-purge="mise prune -y"
+
+# ===============================================================
+# 7. SYNTAX HIGHLIGHTING & AUTOSUGGESTIONS (SEMPRE NO FINAL)
+# ===============================================================
+# Carregando dos diretórios do sistema (Arch Linux)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Configuração específica do Powerlevel10k (Deve vir após o tema ser carregado)
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
