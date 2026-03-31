@@ -20,6 +20,20 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # ===============================================================
+# 2.1. CONFIGURAÇÕES DE HISTÓRICO (APENAS SESSÃO)
+# ===============================================================
+# Remove o arquivo de persistência e zera a gravação no disco
+unset HISTFILE
+SAVEHIST=0
+
+# Mantém apenas na memória para a aba atual
+HISTSIZE=1000
+
+# Garante que as abas não fiquem "fofocando" o histórico uma para a outra
+unsetopt share_history
+unsetopt append_history
+
+# ===============================================================
 # 3. TECLAS DE ATALHO (BINDKEYS)
 # ===============================================================
 bindkey "^[[H" beginning-of-line
