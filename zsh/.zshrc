@@ -53,6 +53,9 @@ bindkey "^[[1;5C" forward-word
 # MISE
 eval "$(~/.local/bin/mise activate zsh)"
 
+# DIRENV
+eval "$(direnv hook zsh)"
+
 # Função de atualização
 mi-update-all() {
   sudo pacman -Syu mise
@@ -89,7 +92,6 @@ alias mi-s="mise doctor"
 alias mi-l="mise ls"
 alias mi-clean="mise prune --dry-run"
 alias mi-purge="mise prune -y"
-
 
 # Nix Shortcuts
 alias hmsf="home-manager switch --flake ~/.dotfiles-wsl/nix-dotfiles-wsl#cauaarch"
