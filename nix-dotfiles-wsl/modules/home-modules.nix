@@ -3,7 +3,8 @@
 {
   flake.homeModules = {
     /*---- Programs ----*/
-    dev = ./features/programs/_dev.nix;
+    devenv = ./features/programs/_devenv.nix;
+    direnv = ./features/programs/_direnv.nix;
     nil = ./features/programs/_nil.nix;
     nixd = ./features/programs/_nixd.nix;
     nixpkgs-fmt = ./features/programs/_nixpkgs-fmt.nix;

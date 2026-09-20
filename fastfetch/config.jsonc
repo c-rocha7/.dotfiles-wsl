@@ -16,50 +16,50 @@
       "type": "custom"
     },
     {
-      "key": "│ {#31} user    {#keys}│",
+      "key": "│ {#31} User    {#keys}│",
       "type": "title",
       "format": "{user-name}"
     },
     {
-      "key": "│ {#32}󰇅 hname   {#keys}│",
+      "key": "│ {#32}󰇅 HName   {#keys}│",
       "type": "title",
       "format": "{host-name}"
     },
     {
-      "key": "│ {#34}{icon} distro  {#keys}│",
+      "key": "│ {#34}{icon} Distro  {#keys}│",
       "type": "os"
     },
     {
-      "key": "│ {#35} kernel  {#keys}│",
+      "key": "│ {#35} Kernel  {#keys}│",
       "type": "kernel"
     },
     {
-      "key": "│ {#36}󰖟 packages{#keys}│",
+      "key": "│ {#36}󰖟 Packages{#keys}│",
       "type": "packages"
     },
     {
-      "key": "│ {#31} term    {#keys}│",
+      "key": "│ {#31} Term    {#keys}│",
       "type": "terminal"
     },
     {
-      "key": "│ {#32} shell   {#keys}│",
+      "key": "│ {#32} Shell   {#keys}│",
       "type": "shell"
     },
     {
-      "key": "│ {#33}󰍛 cpu     {#keys}│",
+      "key": "│ {#33}󰍛 CPU     {#keys}│",
       "type": "cpu",
       "showPeCoreCount": true
     },
     {
-      "key": "│ {#34}󰍛 gpu     {#keys}│",
+      "key": "│ {#34}󰢮 GPU     {#keys}│",
       "type": "gpu"
     },
     {
-      "key": "│ {#36} memory  {#keys}│",
+      "key": "│ {#36} Memory  {#keys}│",
       "type": "memory"
     },
     {
-      "key": "│ {#34}󰉉 disk    {#keys}│",
+      "key": "│ {#34}󰉉 Disk    {#keys}│",
       "type": "disk",
       "folders": "/"
     },
@@ -68,7 +68,7 @@
       "type": "custom"
     },
     {
-      "key": "│ {#39} colors  {#keys}│",
+      "key": "│ {#39} Colors  {#keys}│",
       "type": "colors",
       "symbol": "circle"
     },

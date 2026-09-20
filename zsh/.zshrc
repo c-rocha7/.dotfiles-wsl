@@ -58,7 +58,7 @@ eval "$(direnv hook zsh)"
 
 # Função de atualização
 mi-update-all() {
-  sudo pacman -Syu mise
+  mise self-update
   mise upgrade
   mise install
   echo "🚀 Sistema e ferramentas atualizados!"
